@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 96" role="img" aria-labelledby="title">
+  <title id="title">探出头的小黄猫</title>
+  <g stroke="#142847" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#ffd85d" d="M18 65 22 22 43 37Q64 27 86 37l21-15 3 43Q112 87 65 88 18 87 18 65Z"/>
+    <path fill="#ffb8a9" d="m27 30 14 11-17 4Zm71 0L87 41l17 4Z" stroke-width="2"/>
+    <path fill="#fff8dd" d="M39 69q25 31 51 0-7-18-25-15Q45 51 39 69Z" stroke="none"/>
+    <path fill="none" d="M28 58 6 53m23 15L4 69m96-11 22-5m-22 15 24 1" stroke-width="3"/>
+    <path fill="#142847" d="M45 58q3-6 6 0t-6 0m32 0q3-6 6 0t-6 0Z" stroke="none"/>
+    <path fill="#ee8c72" d="m60 69 5 4 5-4Z" stroke-width="2"/>
+    <path fill="none" d="M65 74v4m0 0q-5 5-9-1m9 1q5 5 9-1" stroke-width="2"/>
+    <path fill="#ffd85d" d="M24 81q8-9 18-3l2 12H21q-4-4 3-9Zm66-3q10-6 18 3 7 5 3 9H88Z"/>
+  </g>
+  <path d="m25 6 4 7M13 15l7 3m89-12-4 7m16 2-7 3" fill="none" stroke="#ffbf26" stroke-width="4" stroke-linecap="round"/>
+</svg>

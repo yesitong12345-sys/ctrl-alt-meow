@@ -1,0 +1,16 @@
+{
+  "name": "educompanion-loop-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "start:model": "node --env-file=.env server.mjs",
+    "start:school": "node --env-file=.env.school server.mjs",
+    "check": "node --check server.mjs && node --check workflows/paper-intake.mjs && node --check workflows/electric-field-problem.mjs && node --check workflows/identity.mjs && node --check workflows/geometry-workflow.mjs && node --check workflows/geometry-trusted-pipeline.mjs && node --check workflows/geometry-ir-v4-compat.mjs && node --check workflows/exam-coverage-audit.mjs && node --check workflows/polyhedron-geometry-engine.mjs && node --check workflows/polyhedron-geometry-entry.mjs && node --check workflows/polyhedron-regression-library.mjs && node --check workflows/pedagogical-visualization.mjs && node --check workflows/deterministic-geometry-solver.mjs && node --check workflows/geometry-entry.mjs && node --check workflows/solid-geometry-audit.mjs && node --check workflows/circular-geometry-entry.mjs && node --check workflows/geometry-ir-v3.mjs && node --check workflows/geometry-v3-solver.mjs && node --check workflows/geometry-random-registry.mjs && node --check workflows/chemistry-input.mjs && node --check workflows/tutor-session.mjs && node --check workflows/question-rubric.mjs && node --check workflows/geometry-rubric.mjs && node --check workflows/grade10-example-problems.mjs && node --check workflows/teaching-coach.mjs && node --check workflows/analytic-geometry-skill.mjs && node --check workflows/chem-reaction-skill.mjs && node --check workflows/edulab-course-runtime.mjs && node --check workflows/knowledge-card-engine.mjs && node --check workflows/public-problem-library.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "katex": "^0.18.4",
+    "three": "0.160.0"
+  }
+}

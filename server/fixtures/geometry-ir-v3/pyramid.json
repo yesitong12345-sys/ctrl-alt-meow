@@ -1,0 +1,23 @@
+{
+  "schemaVersion":"geometry-ir/v3.0","stage":"normalized","problemId":"fixture-pyramid",
+  "coordinateSystem":{"dimension":3,"handedness":"right","lengthUnit":"cm"},
+  "sourceEvidence":[{"id":"ev-source","kind":"text","content":"正四棱锥P-ABCD底边2高1，E为PC中点，求BE与平面PAC所成角正弦。","status":"confirmed"}],
+  "entities":[
+    {"id":"solid-1","type":"regular_quad_pyramid","role":"solid","apex":"P","baseVertices":["A","B","C","D"],"factKind":"assertedFact","status":"confirmed","confidence":1,"evidenceRefs":["ev-source"],"normalizationRule":"fixture"},
+    {"id":"P","type":"point","factKind":"assertedFact","status":"confirmed","confidence":1,"evidenceRefs":["ev-source"],"normalizationRule":"fixture"},
+    {"id":"A","type":"point","factKind":"assertedFact","status":"confirmed","confidence":1,"evidenceRefs":["ev-source"],"normalizationRule":"fixture"},
+    {"id":"B","type":"point","factKind":"assertedFact","status":"confirmed","confidence":1,"evidenceRefs":["ev-source"],"normalizationRule":"fixture"},
+    {"id":"C","type":"point","factKind":"assertedFact","status":"confirmed","confidence":1,"evidenceRefs":["ev-source"],"normalizationRule":"fixture"},
+    {"id":"D","type":"point","factKind":"assertedFact","status":"confirmed","confidence":1,"evidenceRefs":["ev-source"],"normalizationRule":"fixture"},
+    {"id":"E","type":"point","factKind":"assertedFact","status":"confirmed","confidence":1,"evidenceRefs":["ev-source"],"normalizationRule":"fixture"},
+    {"id":"BE","type":"segment","points":["B","E"],"factKind":"assertedFact","status":"confirmed","confidence":1,"evidenceRefs":["ev-source"],"normalizationRule":"fixture"},
+    {"id":"PAC","type":"plane","points":["P","A","C"],"factKind":"assertedFact","status":"confirmed","confidence":1,"evidenceRefs":["ev-source"],"normalizationRule":"fixture"}
+  ],
+  "constraints":[
+    {"id":"parameter-baseEdge","type":"quantity","subjects":["solid-1"],"name":"baseEdge","dimension":"length","unit":"cm","value":{"op":"integer","value":2},"factKind":"assertedFact","status":"confirmed","confidence":1,"evidenceRefs":["ev-source"],"normalizationRule":"fixture"},
+    {"id":"parameter-height","type":"quantity","subjects":["solid-1"],"name":"height","dimension":"length","unit":"cm","value":{"op":"integer","value":1},"factKind":"assertedFact","status":"confirmed","confidence":1,"evidenceRefs":["ev-source"],"normalizationRule":"fixture"},
+    {"id":"midpoint-E-PC","type":"midpoint","point":"E","endpoints":["P","C"],"subjects":["E","P","C"],"factKind":"assertedFact","status":"confirmed","confidence":1,"evidenceRefs":["ev-source"],"normalizationRule":"fixture"}
+  ],
+  "queries":[{"id":"query-1","type":"line_plane_angle_sine","subjects":["BE","PAC"],"line":"BE","plane":"PAC"}],
+  "solutionSet":null,"derivations":[],"verification":{"status":"pending"},"adapter":{"from":"fixture","version":1}
+}

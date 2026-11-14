@@ -1,0 +1,12 @@
+{
+  "synthetic": true,
+  "notice": "Fictional example created for documentation. No real student data or uploaded material.",
+  "subject": "数学",
+  "question": "已知函数 f(x)=x^2-4x+3，求它的最小值。",
+  "studentAnswer": "把函数配方为 (x-2)^2-1，因此最小值为 -1。",
+  "knowledgePoints": [
+    "二次函数",
+    "配方法"
+  ],
+  "errorCause": "合成示例：本题答案正确，仅用于演示字段结构。"
+}

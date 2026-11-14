@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edulab.local/schemas/geometry-compile-response-v1.schema.json",
+  "title": "DeepSeek Geometry Compile Response v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "geometryIR", "sourceCoverage", "candidateCoordinates", "unresolvedItems"],
+  "properties": {
+    "schemaVersion": {"const": "geometry-compile-response/v1"},
+    "geometryIR": {"$ref": "./geometry-ir-v4.schema.json"},
+    "sourceCoverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["clauseId", "status", "refs"],
+        "properties": {
+          "clauseId": {"type": "string", "minLength": 1},
+          "status": {"enum": ["explicit_fact", "derived_fact", "query", "context", "unresolved"]},
+          "refs": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "candidateCoordinates": {
+      "oneOf": [
+        {"type": "null"},
+        {"type": "object", "additionalProperties": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}}
+      ]
+    },
+    "unresolvedItems": {"type": "array"},
+    "modelingParameters": {"type": "object"},
+    "coordinateSystem": {"type": "object"},
+    "suggestedConstructions": {"type": "array"},
+    "confidence": {"type": "object"},
+    "imageAudit": {"type": ["object", "null"]},
+    "solutionOutline": {"type": "array"},
+    "finalAnswer": {"type": ["object", "null"]},
+    "visualFocus": {"type": "array"},
+    "highlightEntities": {"type": "array"},
+    "annotations": {"type": "array"},
+    "constructionDisplayPlan": {"type": "array"},
+    "subproblemVisualization": {"type": "array"},
+    "visibilitySequence": {"type": "array"},
+    "semanticReviewReport": {"type": "object"}
+  }
+}

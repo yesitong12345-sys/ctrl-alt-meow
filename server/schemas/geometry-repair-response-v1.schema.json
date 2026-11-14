@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "geometry-repair-response-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "semanticReviewReport", "patch"],
+  "properties": {
+    "schemaVersion": {"const": "geometry-repair-response/v1"},
+    "semanticReviewReport": {"type": "object"},
+    "patch": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["op", "path"], "properties": {"op": {"enum": ["add", "replace", "remove"]}, "path": {"type": "string", "pattern": "^/"}, "value": {}}}}
+  }
+}

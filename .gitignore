@@ -1,0 +1,54 @@
+# Dependencies and generated caches
+node_modules/
+__pycache__/
+*.py[cod]
+.npm-cache/
+.pnpm-store/
+.gradle/
+.hvigor/
+hvigorcache/
+
+# Credentials and every dated backup of local configuration
+**/.env*
+!**/.env.example
+!**/.env.school.example
+*.local.json*
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+
+# Private learning data and photographs
+server/data*.json*
+server/backups/
+server/uploads/
+**/chrome-qa-profile*/
+implementation/skills/runtime/
+*.log
+
+# Local work, old source snapshots and assistant state
+work/
+outputs/
+recovered/
+.codex/
+.agents/
+*.bak*
+*.keep-*
+
+# Builds, archives and recordings
+deliverables/
+dsh-launcher/
+dist/
+build/
+*.apk
+*.idsig
+*.zip
+*.tgz
+*.tar.gz
+*.mp4
+EduCompanionAndroid/app/src/main/assets/app/
+
+# Review every screenshot and fixture before adding it explicitly.
+server/scripts/shots*/

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edulab.local/schemas/geometry-ir-v4.schema.json",
+  "title": "Geometry IR v4",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "entities", "explicitFacts", "derivedFacts", "constraints", "queries", "evidence"],
+  "properties": {
+    "schemaVersion": {"const": "geometry-ir/v4"},
+    "entities": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
+    "explicitFacts": {"type": "array", "items": {"$ref": "#/$defs/explicitFact"}},
+    "derivedFacts": {"type": "array", "items": {"$ref": "#/$defs/derivedFact"}},
+    "constraints": {"type": "array", "items": {"$ref": "#/$defs/constraint"}},
+    "queries": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
+    "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}}
+  },
+  "$defs": {
+    "identified": {
+      "type": "object",
+      "required": ["id", "kind"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z_][A-Za-z0-9_.:-]*$"},
+        "kind": {"type": "string", "minLength": 1}
+      }
+    },
+    "explicitFact": {
+      "allOf": [
+        {"$ref": "#/$defs/identified"},
+        {
+          "type": "object",
+          "required": ["evidenceRefs"],
+          "properties": {"evidenceRefs": {"type": "array", "minItems": 1, "items": {"type": "string"}}}
+        }
+      ]
+    },
+    "derivedFact": {
+      "allOf": [
+        {"$ref": "#/$defs/identified"},
+        {
+          "type": "object",
+          "required": ["dependencies", "expression"],
+          "properties": {
+            "dependencies": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+            "expression": {"type": "string", "minLength": 1}
+          }
+        }
+      ]
+    },
+    "constraint": {
+      "allOf": [
+        {"$ref": "#/$defs/identified"},
+        {
+          "type": "object",
+          "required": ["hard", "factRefs"],
+          "properties": {
+            "hard": {"type": "boolean"},
+            "factRefs": {"type": "array", "items": {"type": "string"}}
+          }
+        }
+      ]
+    },
+    "evidence": {
+      "allOf": [
+        {"$ref": "#/$defs/identified"},
+        {
+          "type": "object",
+          "required": ["quote"],
+          "properties": {
+            "kind": {"enum": ["text", "image"]},
+            "quote": {"type": "string", "minLength": 1},
+            "imageHash": {"type": "string"},
+            "region": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {"type": "number", "minimum": 0, "maximum": 1}
+            }
+          }
+        }
+      ]
+    }
+  }
+}
