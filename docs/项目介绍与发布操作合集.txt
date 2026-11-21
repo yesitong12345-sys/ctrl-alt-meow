@@ -608,7 +608,7 @@ Invoke-RestMethod 'http://127.0.0.1:4197/health'
 2. 如果提示该目录不是 Git 仓库，按界面提供的 `create a repository here` 创建。确认最终仓库路径仍是发布副本，不是原来的开发目录，也不要多套一个空文件夹。
 3. 暂不自动添加另一个 README 或许可证覆盖已经准备的文件；自有代码许可按前一节的决定处理。
 4. 回到 `Changes` 列表，逐个查看准备上传的文件。重点找 `.env`、`model-config`、`data.json`、照片、备份、日志。它们不应出现在提交中。
-5. 在 `Summary` 填 `Initial public-source snapshot`，说明这是整理后的首个源码快照。这里保存的提交时间就是现在。
+5. 在 `Summary` 填 `Initial public-source snapshot`，说明这是整理后的首个源码快照。这里保存的提交时间就是现在，不要改成暑假的日期。
 6. 点击提交按钮，将检查过的文件保存为一个本地版本。
 7. 点击 `Publish repository`，确认仓库名称、自己的账号和路径。
 8. 第一次保留 `Keep this code private`，再执行发布。
